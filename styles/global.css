@@ -1,0 +1,310 @@
+:root {
+  /* Color */
+  --background-primary: #F4F5FB;
+  --background-secondary: #FFFFFF;
+
+  --color-brand: #CA3884;
+  --color-brand-hover: #A52C6B;
+  --color-danger: #C93847;
+
+  --content-primary: #080B12;
+  --content-secondary: #374151;
+  --content-tertiary: #9CA3AF;
+  --always-white: #FFFFFF;
+
+  --border-primary: #D1D5DB;
+  --border-hover: #B9C2D0;
+
+  /* Fonts */
+
+  --title-font-family: 'Inter', sans-serif;
+  --title-font-size: 24px;
+  --title-line-height: 32px;
+  --title-font-weight: 700;
+
+  --label-font-family: 'Inter', sans-serif;
+  --label-font-size: 16px;
+  --label-line-height: 20px;
+  --label-font-weight: 600;
+
+  --paragraph-font-family: 'Inter', sans-serif;
+  --paragraph-font-size: 16px;
+  --paragraph-line-height: 20px;
+  --paragraph-font-weight: 500;
+
+  --link-font-family: 'Inter', sans-serif;
+  --link-font-size: 14px;
+  --link-line-height: 16px;
+  --link-font-weight: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  background: var(--background-primary);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 25px 0 60px;
+
+  >.logo-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  >h1 {
+    color: var(--content-secondary);
+    font-family: Sora;
+    font-size: 26.667px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.533px;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 627px; 
+  padding: 20px; 
+}
+
+.home-page {
+  padding-bottom: 16px;
+
+  font-family: var(--link-font-family);
+  font-size: var(--link-font-size);
+  font-weight: var(--link-font-weight);
+  line-height: var(--link-line-height);
+
+  border:  none;
+
+  background-color: var(--background-primary);
+  color: var(--color-brand);
+
+  cursor: pointer;
+}
+
+main h2 {
+  font-family: var(--title-font-family);
+  font-size: var(--title-font-size);
+  font-weight: var(--title-font-weight);
+  line-height: var(--title-line-height);
+
+  color: var(--content-primary);
+}
+
+.send-data{
+  display: flex;
+  align-items: center;
+  width: 627px;
+  margin: 44px 0 ;
+  gap: 16px;
+
+  >input {
+    display: flex;
+    flex: 1 0 0;
+    align-items: center;
+  
+    height: 44px;
+    padding: 0px 18px;
+    gap: 8px;
+  
+    border: 2px solid var(--border-primary);
+    border-radius: 12px;
+    
+    background: var(--background-secondary);
+    color: var(--content-tertiary);
+  
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-size);
+    font-weight: var(--paragraph-font-weight);
+    line-height: var(--paragraph-line-height); /* 22.4px */
+  }
+
+  >input:hover {
+    border: 2px solid var(--border-hover);
+  }
+}
+
+.btn-add-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  height: 44px;
+  padding: 10px 24px;
+  gap: 8px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: var(--color-brand, #CA3884);
+  color: var(--content-always-white, #FFF);
+
+  font-family: var(--label-font-family);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-font-weight);
+  line-height: var(--label-line-height);
+
+  cursor: pointer;
+}
+
+.btn-add-item:hover {
+  background-color: var(--color-brand-hover);
+  transition: .75s ease;
+}
+
+.shopping-list {
+  display: flex;
+  width: 627px;
+  height: 500px;
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.container-form {
+  display: flex;
+  padding: 13px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  align-self: stretch;
+
+  border-radius: 12px;
+  background: var(--background-secondary, #FFF);
+
+  color: var(--content-secondary, #374151);
+
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; 
+
+  >input[type="checkbox"] {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid var(--border-primary);
+    background-color: var(--background-secondary);
+  }
+
+  >input[type="checkbox"]:hover {
+  border-radius: 6px;
+  border: 1px solid var(--border-hover, #B9C2D0);
+  background: var(--background-secondary, #FFF);
+  }
+
+  >input[type="checkbox"]:checked {
+    border-radius: 6px;
+    border: 1px solid var(--color-brand, #CA3884);
+    background: var(--color-brand, #CA3884);
+  }
+
+  >label{
+    flex: 1; 
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-size);
+    font-weight: var(--paragraph-font-weight);
+    line-height: var(--paragraph-line-height);
+  }
+
+  .remove-icon{
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+}
+aside {
+  display: flex;
+  justify-content: space-between;
+  width: 627px;
+  padding: 12px;
+  gap: 8px;
+  margin-top: 36px;
+
+  border-radius: 12px;
+  background: var(--color-danger);
+  color: var(--content-always-white, #FFF);
+
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+
+  display: none;
+}
+
+aside span{
+  flex: 1;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--background-secondary);
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.modal-content {
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#confirm-delete {
+  border-radius: 5px;
+  background-color: var(--color-danger);
+  color: white;
+}
+
+#cancel-delete {
+  border-radius: 5px;
+  background-color: var(--content-tertiary);
+  color: white;
+}
+
+#confirm-modal.open {
+  display: flex;
+}

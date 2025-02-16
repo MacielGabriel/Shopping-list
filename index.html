@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de compras</title>
+
+  <link rel="stylesheet" href="styles/global.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <img class="logo-img" src="img/logo.svg" alt="Logo">
+    <h1>
+      Quicklist
+    </h1>
+  </header>
+
+  <main class="Container">
+    <section class="content">
+
+      <button class="home-page"> <- Voltar </button>
+          <h2>
+            Compras da semana
+          </h2>
+
+          <form class="send-data" id="form-details">
+            <input type="text" id="input-data" placeholder="Adicione um novo item">
+            <button type="submit" id="btn-add-item" class="btn-add-item">
+              Adicionar item
+            </button>
+          </form>
+
+          <form class="shopping-list" id="shopping-list">
+            <!-- <div class="container-form">
+              <input type="checkbox">
+              <label >Pão de forma</label>
+              <img class="remove-icon" src="img/delete.svg" alt="Icone de exclusão">
+            </div> -->
+          </form>
+          <div id="confirm-modal" class="modal">
+            <div class="modal-content">
+              <p>Tem certeza que deseja excluir este item?</p>
+              <button id="confirm-delete">Excluir</button>
+              <button id="cancel-delete">Cancelar</button>
+            </div>
+          </div>
+
+          <aside>
+            <img src="img/alert.svg" alt="item de alerta">
+            <span>
+              O item foi removido da lista
+            </span>
+            <img src="img/close.svg" alt="Botão de remoção">
+          </aside>
+
+    </section>
+  </main>
+<script src="./scripts/main.js"></script>
+</body>
+
+</html>
