@@ -80,11 +80,6 @@ main {
   align-items: center;
 }
 
-.content {
-  width: 627px; 
-  padding: 20px; 
-}
-
 .home-page {
   padding-bottom: 16px;
 
@@ -174,12 +169,20 @@ main h2 {
 
 .shopping-list {
   display: flex;
-  width: 627px;
   height: 500px;
   overflow-y: auto;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
+}
+
+.shopping-list::-webkit-scrollbar{
+  width: 10px;
+}
+
+.shopping-list::-webkit-scrollbar-thumb {
+  background-color: var(--content-tertiary);
+  border-radius: 5px;
 }
 
 .container-form {
@@ -242,9 +245,9 @@ main h2 {
     cursor: pointer;
   }
 }
-aside {
-  display: flex;
-  justify-content: space-between;
+
+.remove-alert {
+  display: none;
   width: 627px;
   padding: 12px;
   gap: 8px;
@@ -260,11 +263,20 @@ aside {
   font-weight: 600;
   line-height: 20px;
 
-  display: none;
+  >span{
+    flex: 1;
+  }
+
+  #remove-alert-btn{
+    cursor: pointer;
+  }
 }
 
-aside span{
-  flex: 1;
+.remove-alert.open{
+  position: absolute;
+  top: 83%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .modal {
@@ -307,4 +319,19 @@ aside span{
 
 #confirm-modal.open {
   display: flex;
+}
+
+@media(max-width: 950PX) {
+.send-data{
+  display: grid;
+  width: 90vw;
+}
+ 
+.shopping-list {
+  width: 90vw;
+}
+
+.remove-alert{
+  width: 90vw;
+}
 }

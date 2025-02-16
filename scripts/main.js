@@ -4,6 +4,8 @@ const inputDetails = document.getElementById('input-data')
 
 const shoppingList = document.getElementById('shopping-list')
 
+const removeAlert = document.getElementById('remove-alert')
+
 const modal = document.getElementById("confirm-modal");
 const confirmDeleteBtn = document.getElementById("confirm-delete");
 const cancelDeleteBtn = document.getElementById("cancel-delete");
@@ -96,6 +98,7 @@ confirmDeleteBtn.addEventListener("click", () => {
   if (itemToDelete) {
     itemToDelete.remove(); 
     itemToDelete = null; // Reseta a variável
+    showRemoveAlert();
   }
   closeModal()
 });
@@ -112,13 +115,31 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && itemToDelete) {
       itemToDelete.remove();
       itemToDelete = null;
+      showRemoveAlert();
       closeModal();
+
     } else if (e.key === "Escape") {
       closeModal();
     }
   }
 });
 
+// Exibe a notificação que o item foi excluido.
+function showRemoveAlert() {
+  removeAlert.classList.add("open");
+
+  setTimeout(() => {
+    removeAlert.classList.remove("open");
+  }, 2000);
+}
+
+// Remove a notifiçao ao clicar no icon de exlcusão.
+removeAlert.addEventListener('click', (e) => {
+  if(e.target.id === 'remove-alert-btn') {
+    removeAlert.classList.remove('open')
+  }
+  console.log(e.target)
+})
 
 // Limpa o formulario.
 function formClear() {
@@ -126,4 +147,3 @@ function formClear() {
 
   inputDetails.focus()
 }
-
